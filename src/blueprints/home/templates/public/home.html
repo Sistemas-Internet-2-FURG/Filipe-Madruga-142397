@@ -1,16 +1,6 @@
-{% extends 'index.html' %}
+{% extends "index.html" %}
 
-{% block content %}
-<form action="">
-  <button type="submit">Adicionar Aluno</button>
-</form>
-<form action="">
-  <button type="submit">Adicionar Turma</button>
-</form>
-<form action="">
-  <button type="submit">Ver Alunos Cadastrados</button>
-</form>
-<form action="">
-  <button type="submit">Ver Turmas Cadastrados</button>
-</form>
+{% block main %}
+<button><a href="{{url_for('auth.login')}}">Login</a></button>
+<button><a href="{{url_for('auth.register')}}">Register</a></button>
 {% endblock %}

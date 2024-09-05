@@ -1,0 +1,50 @@
+{% include "index.html"   %}
+
+{% block main %}
+<h3>My Classes</h3>
+<table>
+  <tr>
+    <th>Class Code</th>
+    <th>Class Name</th>
+  </tr>
+  {% for class in classes %}
+      <tr>
+        <td>{{class.0}}</td>
+        <td>{{class.1}}</td>
+      </tr>
+  {% endfor %}
+</table>
+<h3>My Students</h3>
+<table>
+  <tr>
+    <th>Registration</th>
+    <th>Student</th>
+  </tr>
+  {% for student in students %}
+      <tr>
+        <td>{{student.0}}</td>
+        <td>{{student.1}}</td>
+      </tr>
+  {% endfor %}
+</table>
+<br>
+<br>
+<h3>My Classes and Students</h3>
+<table>
+  <tr>
+    <th>Class Code</th>
+    <th>Registration</th>
+  </tr>
+  {% for class_student in classes_students %}
+      <tr>
+        <td>{{class_student.0}}</td>
+        <td>{{class_student.1}}</td>
+      </tr>
+  {% endfor %}
+</table>
+{% include "components/register_class.html" %}
+{% include "components/remove_class.html" %}
+{% include "components/register_student.html" %}
+{% include "components/update_student.html" %}
+{% include "components/remove_student.html" %}
+{% endblock %}

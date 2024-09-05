@@ -3,14 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="{{url_for('static', filename = 'assets/favicon.png')}}" type="image/x-icon">
+  <link rel="icon" href="{{url_for('static', filename = 'images/assets/favicon.png')}}" type="image/x-icon">
   <link rel="stylesheet" href="{{url_for('static', filename = 'css/main.css')}}" type="text/css">
-  <title>Restaurant</title>
+  <title>CRUD</title>
 </head>
-<body class = "layout darktheme">
-  {% include "components/header/header.html" %}
-  {% block content %}
+<body>
+  <header>
+  {% include "components/header.html" %}
+  </header>
+  <main>
+  {% block main %}
   {% endblock %}
-  {% include 'components/footer/footer.html' %}
+  </main>
+  <footer>
+  {% include 'components/footer.html' %}
+  </footer>
 </body>
 </html>
