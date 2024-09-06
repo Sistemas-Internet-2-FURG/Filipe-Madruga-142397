@@ -1,0 +1,6 @@
+{% extends "index.html" %}
+
+{% block main %}
+<button><a href="{{url_for('auth.login')}}">Login</a></button>
+<button><a href="{{url_for('auth.register')}}">Register</a></button>
+{% endblock %}
