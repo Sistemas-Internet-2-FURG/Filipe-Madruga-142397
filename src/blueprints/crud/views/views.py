@@ -32,7 +32,8 @@ class register_student(MethodView):
       error = "You need to register a class first"
     if error is None:
       conn.create_student(registration, studentname)
-      conn.create_classes_students(classcode, registration)
+      for classes in classcode.split(";"):
+        conn.create_classes_students(classes, registration)
       return redirect(url_for("crud.crud"))
     flash(error)
     return redirect(url_for("crud.crud"))
@@ -97,9 +98,11 @@ class update_student(MethodView):
     if error is None:
       match action:
         case "insert":
-          conn.create_classes_students(classcode, registration)
+          for classes in classcode.split(";"):
+            conn.create_classes_students(classes, registration)
         case "remove":
-          conn.remove_classes_students(classcode, registration)
+          for classes in classcode.split(";"):
+            conn.remove_classes_students(classes, registration)
       return redirect(url_for("crud.crud"))
     flash(error)
     return redirect(url_for("crud.crud"))
