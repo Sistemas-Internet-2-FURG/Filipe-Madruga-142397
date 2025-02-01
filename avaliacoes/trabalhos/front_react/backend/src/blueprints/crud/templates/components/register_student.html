@@ -1,0 +1,10 @@
+<form action="{{url_for('crud.register_student')}}" method="post">
+  <h3>Register Student</h3>
+  <label for="registration">Registration</label>
+  <input type="text" name="registration">
+  <label for="studentname">Student Name</label>
+  <input type="text" name="studentname">
+  <label for="classcode">Class Code</label>
+  <input type="text" name="classcode" placeholder="Separated by ';'">
+  <button>Register</button>
+</form>

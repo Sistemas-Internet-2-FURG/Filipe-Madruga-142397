@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+
+{% block main %}
+<form method = "post">
+  <h2>Sign up</h2>
+  <label for = "username">Username</label>
+  <input type = "text" name = "username" placeholder = "Username">
+  <label for = "useremail">E-mail</label>
+  <input type = "text" name = "useremail" placeholder = "E-mail">
+  <label for = "userconfirmemail">Confirm your E-mail</label>
+  <input type = "text" name = "userconfirmemail" placeholder = "E-mail">
+  <label for = "password">Password</label>
+  <input type = "password" name = "password">
+  <label for = "confirm_password">Confirm your password</label>
+  <input type = "password" name = "confirm_password">
+  <button type = "submit">Sign up</button>
+  <p>Already have an account? <a href = "{{url_for('auth.login')}}">Sign in</a></p>
+</form>
+{% endblock %}

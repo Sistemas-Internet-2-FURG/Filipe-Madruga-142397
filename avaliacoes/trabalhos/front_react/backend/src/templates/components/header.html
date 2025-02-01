@@ -1,0 +1,11 @@
+{% if g.user %}
+<p>Olá {{g.user[1]}}</p>
+<button><a href="{{url_for('auth.logout')}}">Logout</a></button>
+{% endif %}
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <p>{{ message }}</p>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
